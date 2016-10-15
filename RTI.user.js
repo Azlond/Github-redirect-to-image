@@ -4,7 +4,7 @@
 // @namespace   https://github.com/Azlond/Imgur-redirect-to-image
 // @include     https://imgur.com/*
 // @exclude     https://imgur.com/privacy
-// @version     1.0
+// @version     1.1
 // @grant       none
 // ==/UserScript==
 
@@ -12,7 +12,7 @@
 var URL = window.location + ""; // current URL
 var path = URL.slice(18, URL.length - 1); //strip the https://imgur.com/
 if (path.length > 4) { //hacky workaround so I don't have to manually exclude all github pages like /jobs or /about
-	if (!(/\?+/.test(path))) { // see if the path contains "?" or "/" - if yes, we're not interested
+	if (!(/\?+|\//.test(path))) { // see if the path contains "?" or "/" - if yes, we're not interested
 		try { // try to catch potential errors
 			var linkElements = document.getElementsByTagName("link"); // collect all <link>-elements from the source code 
 			for (var i = 0; i < linkElements.length; i++) { // go through all object we just collected 
