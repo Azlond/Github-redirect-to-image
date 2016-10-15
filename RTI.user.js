@@ -4,7 +4,7 @@
 // @namespace   https://github.com/Azlond/Imgur-redirect-to-image
 // @include     https://imgur.com/*
 // @exclude     https://imgur.com/privacy
-// @version     1
+// @version     1.0
 // @grant       none
 // ==/UserScript==
 
