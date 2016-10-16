@@ -11,7 +11,7 @@
 
 var URL = window.location + ""; // current URL
 var path = URL.slice(18, URL.length - 1); //strip the https://imgur.com/
-if (path.length > 4) { //hacky workaround so I don't have to manually exclude all github pages like /jobs or /about
+if (path.length > 4) { //hacky workaround so I don't have to manually exclude all imgur pages like /jobs or /about
 	if (!(/\?+|\//.test(path))) { // see if the path contains "?" or "/" - if yes, we're not interested
 		try { // try to catch potential errors
 			var linkElements = document.getElementsByTagName("link"); // collect all <link>-elements from the source code 
