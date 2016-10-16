@@ -13,7 +13,7 @@
 var URL = window.location + ""; // current URL
 var path = URL.slice(18, URL.length); //strip the https://imgur.com/
 if (path.charAt(path.length - 1) === "/") { //strip the path of a potential slash "/" at the end
-	path = path.slice(0,path.length-1);
+	path = path.slice(0, path.length - 1);
 }
 if (path.length === 5 || path.length === 7) { //hacky workaround, imageIDs appear to be either 5 or 7 characters long
 	if (!(/\?+|\//.test(path))) { // see if the path contains "?" or "/", just in case
