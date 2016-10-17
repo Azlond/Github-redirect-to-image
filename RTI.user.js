@@ -3,15 +3,24 @@
 // @name        Imgur redirect to image
 // @namespace   https://github.com/Azlond/Imgur-redirect-to-image
 // @include     https://imgur.com/*
+// @include     http://imgur.com/*
 // @exclude     https://imgur.com/about
+// @exclude     http://imgur.com/about
 // @exclude     https://imgur.com/privacy
+// @exclude     http://imgur.com/privacy
 // @version     1.2
 // @grant       none
+// run-at       document-start
 // ==/UserScript==
 
 
 var URL = window.location + ""; // current URL
-var path = URL.slice(18, URL.length); //strip the https://imgur.com/
+var path;
+if (URL.charAt(5) === ":") { // HTTPS
+	path = URL.slice(18, URL.length); //strip the https://imgur.com/
+} else { // HTTP
+	path = URL.slice(17, URL.length); //strip the http://imgur.com/
+}
 if (path.charAt(path.length - 1) === "/") { //strip the path of a potential slash "/" at the end
 	path = path.slice(0, path.length - 1);
 }
